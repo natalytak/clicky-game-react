@@ -1,0 +1,50 @@
+[
+    {
+      "id": 1,
+      "imgUrl": "acropolis.jpg"
+    },
+    {
+      "id": 2,
+      "imgUrl": "colosseum.jpg"
+    },
+    {
+      "id": 3,
+      "imgUrl": "cusco.png"
+    },
+    {
+      "id": 4,
+      "imgUrl": "dome.jpg"
+    },
+    {
+      "id": 5,
+      "imgUrl": "eiffel-tower.jpg"
+    },
+    {
+      "id": 6,
+      "imgUrl": "golden-gate-bridge.jpg"
+    },
+    {
+      "id": 7,
+      "imgUrl": "india.jpg"
+    },
+    {
+      "id": 8,
+      "imgUrl": "kyoto.jpg"
+    },
+    {
+      "id": 9,
+      "imgUrl": "london.jpg"
+    },
+    {
+      "id": 10,
+      "imgUrl": "seattle.jpg"
+    },
+    {
+      "id": 11,
+      "imgUrl": "statue.jpg"
+    },
+    {
+      "id": 12,
+      "imgUrl": "venice.jpg"
+    }
+  ]
