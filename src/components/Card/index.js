@@ -1,22 +1,20 @@
 import React from "react";
 
-// import images from "../../images/images.json";
-
-function Card(props) {
+const Card = props => {
   return (
-    <img style={imgCSS} 
-    src={require("../../images/" + props.imgUrl)}
-    alt={props.imgUrl}
-        className="img-fluid img-thumbnail"
-        onClick={() => props.guessImage(props.id)}
+    <img style={imgCSS} src={require("../../images/" + props.imgUrl)} 
+          alt={props.imgUrl}
+          className="img-fluid img-thumbnail" 
+          onClick={() => {props.checkClickedImage(props.id)}}
     />
   );
 };
 const imgCSS = {
-  maxHeight: "180px",
-  maxWidth: "180px",
-  margin: "20px",
-  border: "5px solid gold"
+  border: "5px solid gold",
+  cursor: 'pointer',
+  maxHeight: "160px",
+  maxWidth: "160px",
+  margin: "20px"
 };
 
 export default Card;
