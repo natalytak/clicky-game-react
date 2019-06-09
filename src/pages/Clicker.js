@@ -52,17 +52,16 @@ export class Clicker extends Component {
         message: "You lost! Try again.",
         isClicked: false
       });
-      const imgReset = this.state.images.map(images => {
-        this.setState({ 
-          isClicked: false
-        });
-      });
+      // const images = this.state.images.map(image => {
+      //   this.setState({ 
+      //     isClicked: false
+      //   });
+      // });
       console.log(score);
-      console.log(this.state.isClicked);
-      return images
+      console.log(this.state.isClicked)
     }
     // this.setState({ images }, () => this.shuffle());
-    // return images
+    return images
   // });
   };
   
