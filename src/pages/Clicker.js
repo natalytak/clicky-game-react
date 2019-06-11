@@ -14,6 +14,14 @@ export class Clicker extends Component {
     isClicked: false,
   };
 
+  componentDidMount() {
+    console.log(this.state.isClicked)
+  }
+  
+  componentDidUpdate(prevProps, prevState) {
+    console.log(this.state.isClicked)
+  }
+  
 
   shuffleArray = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -38,23 +46,12 @@ export class Clicker extends Component {
     console.log("Before click status: "+isClicked);
     if (score < 12) {
     const images = this.state.images.map(image => {
-    // const img = this.state.images.find(image => image.id === id);
-    // console.log(img.id);
-
-
-    
-    // this.setState({ images }, () => this.shuffle());
     if (img.id === id && this.state.isClicked === false) {
       this.setState({ 
-        isClicked: true
-      });
-      // img.isClicked = true;
-      // score = this.state.score + 1
-      this.setState({ 
+        isClicked: true,
         score: this.state.score + 1,
         message: "You won!",
-        // isClicked: this.state.isClicked = true
-      })
+      });
       console.log("After click if CORRECT: "+this.state.isClicked+" id:" + img.id)
     } else if (img.id === id && this.state.isClicked === true) {
       this.setState({ 
@@ -68,9 +65,9 @@ export class Clicker extends Component {
       });
       console.log(score);
     }
-    this.setState({ 
-          isClicked: false
-        });
+    // this.setState({ 
+    //       isClicked: false
+    //     });
         console.log("After click state if WRONG: "+this.state.isClicked+" id:" + img.id);
     // this.setState({ images }, () => this.shuffle());
     return image
@@ -79,14 +76,15 @@ export class Clicker extends Component {
 } else {
   this.setState({ message: "Great job! You won this round!"})
   this.setState({ score: 0})
-  const images = this.state.images.map(image => {
-    image.clicked = false;
-  })
+  // const images = this.state.images.map(image => {
+  //   image.clicked = false;
+  // })
 }
   }
 
 
   render() {
+    console.log(`RENDER`)
     return (
       <div>
         <NavBar

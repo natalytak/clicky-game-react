@@ -12,10 +12,10 @@ function NavBar(props) {
             </a>
           </Col>
           <Col size="sm-4">
-            <h3 style={messageStyle}>{props.message}</h3>
+            <p style={scoreStyle}>Score: {props.score} | Top Score: {props.topScore}</p>
           </Col>
           <Col size="sm-4">
-            <h3 style={scoreStyle}>Score: {props.score} | Top Score: {props.topScore}</h3>
+            <p style={messageStyle}>{props.message}</p>
           </Col>
       </Row>
     </Container>
@@ -37,7 +37,8 @@ const messageStyle = {
   width: "33.3%",
   verticalAlign: "middle",
   textAlign: "center",
-  fontSize: "1.2rem"
+  fontSize: "1.2rem",
+  color: "gold"
 }
 
 const scoreStyle = {

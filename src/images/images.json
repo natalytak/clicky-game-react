@@ -1,50 +1,62 @@
 [
     {
       "id": 1,
-      "imgUrl": "acropolis.jpg"
+      "imgUrl": "acropolis.jpg",
+      "isClicked": false
     },
     {
       "id": 2,
-      "imgUrl": "colosseum.jpg"
+      "imgUrl": "colosseum.jpg",
+      "isClicked": false
     },
     {
       "id": 3,
-      "imgUrl": "cusco.png"
+      "imgUrl": "cusco.png",
+      "isClicked": false
     },
     {
       "id": 4,
-      "imgUrl": "dome.jpg"
+      "imgUrl": "dome.jpg",
+      "isClicked": false
     },
     {
       "id": 5,
-      "imgUrl": "eiffel-tower.jpg"
+      "imgUrl": "eiffel-tower.jpg",
+      "isClicked": false
     },
     {
       "id": 6,
-      "imgUrl": "golden-gate-bridge.jpg"
+      "imgUrl": "golden-gate-bridge.jpg",
+      "isClicked": false
     },
     {
       "id": 7,
-      "imgUrl": "india.jpg"
+      "imgUrl": "india.jpg",
+      "isClicked": false
     },
     {
       "id": 8,
-      "imgUrl": "kyoto.jpg"
+      "imgUrl": "kyoto.jpg",
+      "isClicked": false
     },
     {
       "id": 9,
-      "imgUrl": "london.jpg"
+      "imgUrl": "london.jpg",
+      "isClicked": false
     },
     {
       "id": 10,
-      "imgUrl": "seattle.jpg"
+      "imgUrl": "seattle.jpg",
+      "isClicked": false
     },
     {
       "id": 11,
-      "imgUrl": "statue.jpg"
+      "imgUrl": "statue.jpg",
+      "isClicked": false
     },
     {
       "id": 12,
-      "imgUrl": "venice.jpg"
+      "imgUrl": "venice.jpg",
+      "isClicked": false
     }
   ]
