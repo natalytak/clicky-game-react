@@ -14,7 +14,9 @@ const imgCSS = {
   cursor: 'pointer',
   maxHeight: "160px",
   maxWidth: "160px",
-  margin: "20px"
+  margin: "20px",
+  boxShadow: "5px 5px 8px 5px #888888"
 };
+
 
 export default Card;

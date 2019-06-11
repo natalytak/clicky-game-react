@@ -9,9 +9,9 @@ export class Clicker extends Component {
   state = {
     images,
     score: 0,
-    topScore: 0,
+    topScore: 12,
     message: "Click on an image to start!",
-    isClicked: false
+    isClicked: false,
   };
 
 
@@ -31,40 +31,61 @@ export class Clicker extends Component {
 
 
   checkClickedImage = id => {
+    const img = this.state.images.find(image => image.id === id);
+    console.log(img.id);
     const { score } = this.state;
-    console.log(score);
+    const { isClicked } = this.state;
+    console.log("Before click status: "+isClicked);
+    if (score < 12) {
+    const images = this.state.images.map(image => {
+    // const img = this.state.images.find(image => image.id === id);
+    // console.log(img.id);
 
-    this.setState({ images }, () => this.shuffle());
-    if (images.id === this.id && this.state.isClicked === false) {
+
+    
+    // this.setState({ images }, () => this.shuffle());
+    if (img.id === id && this.state.isClicked === false) {
       this.setState({ 
         isClicked: true
       });
-      // images.clicked = true
+      // img.isClicked = true;
       // score = this.state.score + 1
       this.setState({ 
         score: this.state.score + 1,
-        message: "You won!"
+        message: "You won!",
+        // isClicked: this.state.isClicked = true
       })
-      
-    } else if (images.id === this.id && this.state.isClicked === true) {
+      console.log("After click if CORRECT: "+this.state.isClicked+" id:" + img.id)
+    } else if (img.id === id && this.state.isClicked === true) {
       this.setState({ 
         score: 0,
-        message: "You lost! Try again.",
-        isClicked: false
+        message: "You lost! Try again."
       });
-      // const images = this.state.images.map(image => {
-      //   this.setState({ 
-      //     isClicked: false
-      //   });
-      // });
+      const images = this.state.images.map(image => {
+        this.setState({ 
+          isClicked: false
+        });
+      });
       console.log(score);
-      console.log(this.state.isClicked)
     }
+    this.setState({ 
+          isClicked: false
+        });
+        console.log("After click state if WRONG: "+this.state.isClicked+" id:" + img.id);
     // this.setState({ images }, () => this.shuffle());
-    return images
-  // });
-  };
-  
+    return image
+  });
+  this.setState({ img }, () => this.shuffle());
+} else {
+  this.setState({ message: "Great job! You won this round!"})
+  this.setState({ score: 0})
+  const images = this.state.images.map(image => {
+    image.clicked = false;
+  })
+}
+  }
+
+
   render() {
     return (
       <div>
