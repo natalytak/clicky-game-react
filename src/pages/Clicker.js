@@ -14,15 +14,6 @@ export class Clicker extends Component {
     isClicked: false,
   };
 
-  componentDidMount() {
-    console.log(this.state.isClicked)
-  }
-  
-  componentDidUpdate(prevProps, prevState) {
-    console.log(this.state.isClicked)
-  }
-  
-
   shuffleArray = (arr) => {
     for (let i = arr.length - 1; i > 0; i--) {
       let j = Math.floor(Math.random() * (i + 1));
@@ -39,46 +30,33 @@ export class Clicker extends Component {
 
 
   checkClickedImage = id => {
-    const img = this.state.images.find(image => image.id === id);
-    console.log(img.id);
     const { score } = this.state;
-    const { isClicked } = this.state;
-    console.log("Before click status: "+isClicked);
     if (score < 12) {
     const images = this.state.images.map(image => {
-    if (img.id === id && this.state.isClicked === false) {
+    if (image.id === id && image.isClicked === false) {
       this.setState({ 
-        isClicked: true,
         score: this.state.score + 1,
         message: "You won!",
       });
-      console.log("After click if CORRECT: "+this.state.isClicked+" id:" + img.id)
-    } else if (img.id === id && this.state.isClicked === true) {
+      image.isClicked = true;
+    } else if (image.id === id && image.isClicked === true) {
       this.setState({ 
         score: 0,
         message: "You lost! Try again."
       });
-      const images = this.state.images.map(image => {
-        this.setState({ 
-          isClicked: false
-        });
+      image.isClicked = false;
+      const resetImages = this.state.images.map(image => {
+        image.isClicked = false;
       });
-      console.log(score);
     }
-    // this.setState({ 
-    //       isClicked: false
-    //     });
-        console.log("After click state if WRONG: "+this.state.isClicked+" id:" + img.id);
-    // this.setState({ images }, () => this.shuffle());
     return image
   });
-  this.setState({ img }, () => this.shuffle());
+  this.setState({ images }, () => this.shuffle());
 } else {
-  this.setState({ message: "Great job! You won this round!"})
-  this.setState({ score: 0})
-  // const images = this.state.images.map(image => {
-  //   image.clicked = false;
-  // })
+  this.setState({ 
+    message: "Great job! You won this round!",
+    score: 0
+  })
 }
   }
 
