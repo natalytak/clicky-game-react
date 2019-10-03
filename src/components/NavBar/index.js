@@ -1,30 +1,24 @@
 import React from "react";
-import { Col, Row, Container } from "../Grid";
 
 function NavBar(props) {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-secondary">
-      <Container>
-        <Row>
-          <Col size="sm-4">
+    <nav className="navbar navbar-expand-lg navbar-dark" style={navBG}>
             <a className="navbar-brand" href="/" style={titleStyle}>
               Clicky Game
             </a>
-          </Col>
-          <Col size="sm-4">
             <p style={scoreStyle}>Score: {props.score} | Top Score: {props.topScore}</p>
-          </Col>
-          <Col size="sm-4">
             <p style={messageStyle}>{props.message}</p>
-          </Col>
-      </Row>
-    </Container>
     </nav>
     
   );
 }
+
+const navBG = {
+  backgroundColor: '#807860',
+};
 const titleStyle = {
-  fontSize: '2rem', 
+  fontFamily: 'Righteous',
+  fontSize: '3rem', 
   textDecoration: 'none',
   display: "inline",
   width: "33.3%",
@@ -33,15 +27,17 @@ const titleStyle = {
 };
 
 const messageStyle = {
+  fontFamily: 'Courgette',
   display: "inline",
   width: "33.3%",
   verticalAlign: "middle",
   textAlign: "center",
-  fontSize: "1.2rem",
+  fontSize: "1.5rem",
   color: "gold"
 }
 
 const scoreStyle = {
+  fontFamily: 'Courgette',
     display: "inline",
     width: "33.3%",
     verticalAlign: "middle",

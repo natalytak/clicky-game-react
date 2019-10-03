@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import NavBar from "../components/NavBar";
 import Card from "../components/Card";
-import Instructions from "../components/Instructions";
 import { Row, Container } from "../components/Grid";
 import images from "../images/images.json";
 
@@ -70,7 +69,6 @@ export class Clicker extends Component {
           topScore={this.state.topScore}
           message={this.state.message}
         />
-        <Instructions />
         <Container>
           <Row>
             {this.state.images.map(image => (
